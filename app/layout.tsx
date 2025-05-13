@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Arimo, Prata } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const arimo = Arimo({
+  weight: ["400", "700", "500", "600"],
+  variable: "--font-arimo",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const prata = Prata({
+  weight: ["400"],
+  variable: "--font-prata",
   subsets: ["latin"],
 });
 
@@ -26,9 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${arimo.variable} ${prata.variable} antialiased relative`}
       >
-        {children}
+        <Navbar />
+        <main className="min-h-[80vh] bg-black mt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );

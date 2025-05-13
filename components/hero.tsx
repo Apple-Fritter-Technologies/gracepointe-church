@@ -1,46 +1,112 @@
-export default function Hero() {
-  return (
-    <section id="home" className="relative pt-20 md:pt-24">
-      <div className="relative h-[70vh] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/api/placeholder/1920/1080')" }}
-        >
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        </div>
-        <div className="container mx-auto px-4 md:px-6 relative h-full flex flex-col justify-center items-center text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Welcome to Gracepointe
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl">
-            A place where faith, community, and purpose come together
-          </p>
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <a
-              href="#services"
-              className="bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-8 rounded-md transition-colors"
-            >
-              Join Us Sunday
-            </a>
-            <a
-              href="#beliefs"
-              className="bg-white hover:bg-gray-100 text-gray-900 font-medium py-3 px-8 rounded-md transition-colors"
-            >
-              Learn More
-            </a>
-          </div>
-        </div>
-      </div>
+"use client";
 
-      {/* Decorative divider */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#ffffff"
-            fillOpacity="1"
-            d="M0,96L80,112C160,128,320,160,480,160C640,160,800,128,960,128C1120,128,1280,160,1360,176L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-          ></path>
-        </svg>
+import * as React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { ChevronRight } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
+import { heroSlides } from "@/lib/data";
+
+export default function Hero() {
+  const [api, setApi] = useState<any>();
+  const [current, setCurrent] = useState(0);
+
+  const slides = heroSlides;
+
+  // Auto-advance slides
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [api]);
+
+  // Track current slide
+  useEffect(() => {
+    if (!api) return;
+
+    const handleSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+
+    api.on("select", handleSelect);
+    return () => {
+      api.off("select", handleSelect);
+    };
+  }, [api]);
+
+  return (
+    <section className="relative bg-background rounded-t-3xl overflow-hidden pb-4">
+      <Carousel
+        setApi={setApi}
+        className="w-full"
+        opts={{
+          align: "start",
+          loop: true,
+          dragFree: false, // Makes swiping feel more natural
+          containScroll: false, // Allows for edge-to-edge swiping
+        }}
+      >
+        <CarouselContent className="cursor-grab active:cursor-grabbing">
+          {slides.map((slide) => (
+            <CarouselItem key={slide.id} className="h-full">
+              {/* Slide content */}
+
+              <div className="flex flex-col-reverse items-center lg:flex-row gap-8 h-full py-12 px-4 md:px-6 container mx-auto">
+                <div className="text-left z-10 flex-1 lg:max-w-xl lg:min-h-[500px] flex justify-between flex-col items-start">
+                  <div>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-title leading-tight">
+                      {slide.title}
+                    </h2>
+                    <div className="w-24 h-1 bg-red my-4" />
+                    <p className="text-base mb-8 text-darkGray">
+                      {slide.description}
+                    </p>
+                  </div>
+                  <Link
+                    href={slide.link}
+                    className="inline-flex items-center px-6 py-3 bg-red hover:bg-red/90 text-white font-bold rounded-md transition-colors"
+                  >
+                    {slide.buttonText}
+                    <ChevronRight className="ml-2" />
+                  </Link>
+                </div>
+                {/* Background image */}
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  height={800}
+                  width={1200}
+                  className="object-cover w-full h-full rounded-3xl flex-1 lg:min-w-xl"
+                  quality={100}
+                  priority
+                />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+
+      {/* Slide navigation dots */}
+      <div className="flex justify-center gap-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => api?.scrollTo(index)}
+            className={`w-3 h-3 rounded-full transition-colors ${
+              index === current ? "bg-red" : "bg-red/20"
+            } hover:bg-red/60`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
     </section>
   );

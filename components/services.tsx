@@ -1,78 +1,74 @@
-interface ServiceCardProps {
+import { serviceTimes } from "@/lib/data";
+import { ChevronRight } from "lucide-react";
+
+interface ServiceTimeProps {
   title: string;
-  time: string;
-  description: string;
+  image: string;
+  listItems: string[];
+  caption?: string;
 }
 
-function ServiceCard({ title, time, description }: ServiceCardProps) {
+function ServiceTime({ title, image, listItems, caption }: ServiceTimeProps) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col h-full">
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <div className="text-amber-600 font-medium mb-4">{time}</div>
-      <p className="text-gray-600 flex-grow">{description}</p>
-      <a
-        href="#contact"
-        className="mt-4 text-amber-600 hover:text-amber-700 font-medium"
-      >
-        Learn more →
-      </a>
+    <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] border">
+      <div className="h-56 overflow-hidden relative">
+        <img
+          src={image}
+          alt={`${title} Service`}
+          className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <h3 className="text-2xl font-semibold absolute bottom-4 left-6 text-white">
+          {title}
+        </h3>
+      </div>
+      <div className="p-6">
+        <ul className="space-y-3 mb-5">
+          {listItems.map((item, index) => (
+            <li key={index} className="flex items-center gap-3">
+              <ChevronRight className="text-red" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        {caption && (
+          <div className="border-t border-gray-100 pt-3 mt-2">
+            <p className="text-right text-sm text-gray-600 italic">{caption}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Church Service Times
+    <section id="services" className="py-20 md:py-28">
+      <div className="container mx-auto px-4 md:px-6 space-y-14">
+        <div className="text-center space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-darkGray inline-block relative">
+            <span className="relative z-10">Join Us</span>
+            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-red z-0"></span>
           </h2>
-          <div className="w-24 h-1 bg-amber-500 mx-auto"></div>
-          <p className="mt-6 text-gray-600 max-w-3xl mx-auto">
-            Join us for worship, prayer, and community. All are welcome to
-            experience God's presence with us.
+          <p className="text-3xl md:text-4xl max-w-4xl mx-auto font-title leading-snug text-gray-800">
+            Our mission is simple:
+            <br />
+            <span className="text-red font-medium">
+              To Love God And To Love Others.
+            </span>
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <ServiceCard
-            title="Sunday Morning"
-            time="9:00 AM - 10:30 AM"
-            description="Contemporary worship service with children's ministry available."
-          />
-          <ServiceCard
-            title="Sunday Morning"
-            time="11:00 AM - 12:30 PM"
-            description="Traditional worship service with full choir and children's ministry available."
-          />
-          <ServiceCard
-            title="Wednesday Evening"
-            time="7:00 PM - 8:30 PM"
-            description="Midweek Bible study and prayer service for all ages."
-          />
-        </div>
-
-        <div className="mt-12 text-center">
-          <h3 className="text-2xl font-semibold mb-6">Special Services</h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2 text-amber-600">
-                Communion Sunday
-              </h4>
-              <p className="text-gray-600">
-                First Sunday of each month during both morning services
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-medium mb-2 text-amber-600">
-                Youth Worship
-              </h4>
-              <p className="text-gray-600">
-                Sunday evenings at 6:00 PM for grades 6-12
-              </p>
-            </div>
-          </div>
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
+          {serviceTimes.map((service, index) => (
+            <ServiceTime
+              key={index}
+              title={service.title}
+              image={service.image}
+              listItems={service.listItems}
+              caption={service.caption}
+            />
+          ))}
         </div>
       </div>
     </section>
