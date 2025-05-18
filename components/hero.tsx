@@ -44,10 +44,10 @@ export default function Hero() {
   }, [api]);
 
   return (
-    <section className="relative bg-background rounded-t-3xl overflow-hidden pb-4">
+    <section className="relative bg-black overflow-hidden ">
       <Carousel
         setApi={setApi}
-        className="w-full"
+        className="w-full rounded-t-3xl bg-background pb-4"
         opts={{
           align: "start",
           loop: true,
@@ -96,7 +96,7 @@ export default function Hero() {
       </Carousel>
 
       {/* Slide navigation dots */}
-      <div className="flex justify-center gap-2">
+      <div className="flex justify-center gap-2 bg-background">
         {slides.map((_, index) => (
           <button
             key={index}
