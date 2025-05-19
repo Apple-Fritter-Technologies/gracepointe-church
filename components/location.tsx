@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Mail, MapPin, Clock, ChevronRight } from "lucide-react";
+import { churchLocation } from "@/lib/data";
 
 export default function Location() {
   return (
@@ -37,14 +38,34 @@ export default function Location() {
             </h3>
 
             <div className="flex items-start mb-8 group">
-              <div className="mr-4 h-10 w-10 rounded-full bg-red/10 flex items-center justify-center flex-shrink-0">
+              <div className="mr-4 h-10 w-10 rounded-full bg-red/10 flex items-center justify-center flex-shrink-0 group-hover:bg-red/20 transition-colors">
                 <MapPin className="h-5 w-5 text-red" />
               </div>
-              <p className="text-gray-700 leading-relaxed">
-                123 Faith Avenue
-                <br />
-                Cityville, State 12345
-              </p>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2 text-lg">
+                  Address
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  6185 SE 140th Street
+                  <br />
+                  Summerfield, FL 34491
+                </p>
+                <p className="text-gray-500 text-sm mt-1 italic">
+                  Located between Belleview and The Villages, only 25 min from
+                  Ocala.
+                </p>
+                <Link
+                  href={churchLocation}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center mt-2 text-red hover:text-red/80 font-medium text-sm transition-colors group"
+                >
+                  <span className="group-hover:underline">
+                    View on Google Maps
+                  </span>
+                  <ChevronRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
             </div>
 
             <div className="space-y-8">
@@ -90,11 +111,11 @@ export default function Location() {
                     </Link>
                     <br />
                     <Link
-                      href="tel:+15551234567"
+                      href="tel:+13522459444"
                       className="inline-flex items-center text-gray-600 hover:text-red transition-colors group"
                     >
                       <span className="group-hover:underline">
-                        (555) 123-4567
+                        (352) 245-9444
                       </span>
                     </Link>
                   </div>
@@ -105,7 +126,7 @@ export default function Location() {
 
           <div className="mt-10">
             <Link
-              href="https://www.google.com/maps/dir/?api=1&destination=123+Faith+Avenue,+Cityville,+State+12345"
+              href={churchLocation}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full bg-red hover:bg-red/80 text-white font-medium py-4 px-6 rounded-lg transition-all shadow-lg hover:shadow-xl"

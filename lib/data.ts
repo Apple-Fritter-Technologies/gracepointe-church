@@ -6,8 +6,8 @@ export const navItems = [
   { name: "Beliefs", href: "/beliefs" },
   { name: "Sermons", href: "/sermons" },
   { name: "Contact", href: "/contact" },
-  { name: "Giving", href: "/giving" },
-  { name: "Visit Our School", href: "/school" },
+  { name: "Giving", href: "https://gracepointefamily.churchtrac.com/give" },
+  { name: "Visit Our School", href: "https://gracepointeacademy.com/" },
 ];
 
 export const heroSlides = [
@@ -85,3 +85,5 @@ export const beliefs = [
       "We are committed to sharing God's love beyond our walls through local outreach initiatives, global missions, and practical service to those in need.",
   },
 ];
+
+export const churchLocation = "https://maps.app.goo.gl/6EBrsk2CBBFzjVPa6";
