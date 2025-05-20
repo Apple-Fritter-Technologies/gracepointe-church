@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
@@ -13,7 +14,7 @@ import { useEffect, useState } from "react";
 import { heroSlides } from "@/lib/data";
 
 export default function Hero() {
-  const [api, setApi] = useState<any>();
+  const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
   const slides = heroSlides;

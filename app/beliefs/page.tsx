@@ -44,7 +44,7 @@ const BeliefsPage = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-10 left-10 text-white">
               <h2 className="text-3xl font-bold mb-2">Faith That Matters</h2>
-              <p className="max-w-md">Timeless truths for today's world</p>
+              <p className="max-w-md">Timeless truths for today&apos;s world</p>
             </div>
           </motion.div>
         </section>
@@ -62,8 +62,8 @@ const BeliefsPage = () => {
             At GracePointe Church, we believe that a clear understanding of what
             we believe is essential for spiritual growth. Our beliefs are rooted
             in the Bible and reflect the historic Christian faith that has
-            sustained believers through centuries. These aren't simply doctrinal
-            statements—they're the truths we live by every day.
+            sustained believers through centuries. These aren&apos;t simply
+            doctrinal statements—they&apos;re the truths we live by every day.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button className="flex items-center gap-2">
@@ -110,15 +110,16 @@ const BeliefsPage = () => {
               Rooted in Scripture
             </h2>
             <p className="text-darkGray mb-6 text-lg leading-relaxed">
-              We believe the Bible is God's inspired Word—our ultimate authority
-              for faith and practice. Scripture informs every aspect of our
-              church life, from our worship services to our community outreach.
+              We believe the Bible is God&apos;s inspired Word—our ultimate
+              authority for faith and practice. Scripture informs every aspect
+              of our church life, from our worship services to our community
+              outreach.
             </p>
             <p className="text-darkGray text-lg leading-relaxed">
               Our pastoral team is committed to teaching the whole counsel of
-              God's Word in a way that's relevant to daily life. We encourage
-              every member to engage with Scripture regularly through personal
-              study and group discussions.
+              God&apos;s Word in a way that&apos;s relevant to daily life. We
+              encourage every member to engage with Scripture regularly through
+              personal study and group discussions.
             </p>
           </div>
         </motion.section>
@@ -137,7 +138,7 @@ const BeliefsPage = () => {
             </h2>
             <p className="text-darkGray text-lg max-w-2xl mx-auto">
               We welcome your questions about our beliefs and how they shape our
-              church community. Faith is a journey, and we're here to walk
+              church community. Faith is a journey, and we&apos;re here to walk
               alongside you.
             </p>
           </div>
@@ -184,8 +185,8 @@ const BeliefsPage = () => {
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
             Join us this Sunday to explore these beliefs in a welcoming
-            environment. At GracePointe, faith isn't just something we
-            believe—it's something we live together.
+            environment. At GracePointe, faith isn&apos;t just something we
+            believe—it&apos;s something we live together.
           </p>
           <Button variant="secondary" size="lg">
             Plan Your Visit

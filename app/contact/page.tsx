@@ -90,8 +90,8 @@ const ContactPage = () => {
               Contact Us
             </h1>
             <p className="text-xl text-darkGray max-w-3xl mx-auto leading-relaxed">
-              We're here to help, answer questions, and connect with you. Reach
-              out to us anytime.
+              We&apos;re here to help, answer questions, and connect with you.
+              Reach out to us anytime.
             </p>
           </div>
           <motion.div
@@ -169,7 +169,7 @@ const ContactPage = () => {
                   Send Us a Message
                 </h2>
                 <p className="text-darkGray">
-                  Fill out the form and we'll get back to you as soon as
+                  Fill out the form and we&apos;ll get back to you as soon as
                   possible.
                 </p>
               </div>
@@ -425,8 +425,8 @@ const ContactPage = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-darkGray max-w-3xl mx-auto">
-              Find answers to our most commonly asked questions. Can't find what
-              you're looking for? Reach out to us directly.
+              Find answers to our most commonly asked questions. Can&apos;t find
+              what you&apos;re looking for? Reach out to us directly.
             </p>
           </div>
 

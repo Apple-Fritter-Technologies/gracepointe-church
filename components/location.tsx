@@ -10,8 +10,8 @@ export default function Location() {
         <h2 className="text-3xl md:text-5xl mb-4 font-title">Visit Us</h2>
         <div className="w-20 h-1 bg-red mx-auto rounded-full" />
         <p className="mt-6 text-darkGray max-w-2xl mx-auto text-lg">
-          We'd love to welcome you to our church family. Join us for worship and
-          fellowship.
+          We&apos;d love to welcome you to our church family. Join us for
+          worship and fellowship.
         </p>
       </div>
 

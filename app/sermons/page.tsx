@@ -128,7 +128,7 @@ const SermonsPage = () => {
               <h2 className="text-4xl font-bold mb-3">Journey Through Faith</h2>
               <p className="mb-6">
                 A six-week exploration of how faith shapes our identity and
-                purpose in today's world.
+                purpose in today&apos;s world.
               </p>
               <div className="flex space-x-4">
                 <Button>Watch Now</Button>
@@ -303,8 +303,8 @@ const SermonsPage = () => {
                     Finding Your Purpose
                   </h3>
                   <p className="text-darkGray text-sm mb-4">
-                    Discovering God's unique calling for your life and how to
-                    walk in it daily.
+                    Discovering God&apos;s unique calling for your life and how
+                    to walk in it daily.
                   </p>
                   <Link href="/sermons/series/finding-your-purpose">
                     <Button variant="outline" size="sm">
@@ -530,8 +530,8 @@ const SermonsPage = () => {
             Experience the Message in Person
           </h2>
           <p className="text-xl text-darkGray mb-8 leading-relaxed">
-            Join us this Sunday for worship and a life-changing message. We'd
-            love to welcome you to our church family.
+            Join us this Sunday for worship and a life-changing message.
+            We&apos;d love to welcome you to our church family.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg">Plan Your Visit</Button>

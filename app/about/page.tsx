@@ -102,13 +102,13 @@ const AboutPage = () => {
               Founded in 1995, GracePointe Church began as a small gathering in
               the living room of Pastor James and Sarah Mitchell. Their vision
               was simple yet profound: create a welcoming community where people
-              could experience God's grace and find purpose.
+              could experience God&apos;s grace and find purpose.
             </p>
             <p className="text-darkGray text-lg leading-relaxed">
-              Over the years, we've grown from those humble beginnings into a
-              thriving spiritual family, but our core mission remains unchanged.
-              Today, we continue to be a place where lives are transformed
-              through authentic worship, meaningful connections, and
+              Over the years, we&apos;ve grown from those humble beginnings into
+              a thriving spiritual family, but our core mission remains
+              unchanged. Today, we continue to be a place where lives are
+              transformed through authentic worship, meaningful connections, and
               compassionate service.
             </p>
           </div>
@@ -205,9 +205,9 @@ const AboutPage = () => {
         >
           <h2 className="text-4xl font-bold mb-6">Join Us This Sunday</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-            We'd love to welcome you to our church family. Experience uplifting
-            worship, practical teaching, and genuine community every Sunday at
-            9:30am and 11:00am.
+            We&apos;d love to welcome you to our church family. Experience
+            uplifting worship, practical teaching, and genuine community every
+            Sunday at 9:30am and 11:00am.
           </p>
           <Button variant="secondary" size="lg">
             Plan Your Visit
