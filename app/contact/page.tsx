@@ -109,7 +109,7 @@ const ContactPage = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             <div className="absolute bottom-0 inset-x-0 p-8 md:p-12 text-white">
-              <div className="flex flex-wrap gap-8 justify-center md:justify-between">
+              <div className="flex flex-wrap gap-8 justify-start md:justify-between">
                 <div className="flex items-center">
                   <div className="mr-4 h-12 w-12 rounded-full bg-red flex items-center justify-center">
                     <Phone className="h-6 w-6" />
